@@ -1,1 +1,1 @@
-{"version":3,"sources":["_footer.css","_header.css"],"names":[],"mappings":"AAAA,OCAA,ODCA,QAAA,YAAA,QAAA,YAAA,QAAA","file":"style.css","sourcesContent":["footer {\r\n  display: flex;\r\n}\r\n","header {\r\n  display: flex;\r\n}\r\n"]}
+{"version":3,"sources":["main.css"],"names":[],"mappings":"AAIA,OAJA,OACA,QAAA,YAAA,QAAA,YAAA,QAAA","file":"style.css","sourcesContent":["header {\n  display: flex;\n}\n\nfooter {\n  display: flex;\n}"]}
