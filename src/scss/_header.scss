@@ -1,3 +1,127 @@
-header{
-    display: flex;
+.header{
+   background: $ui-white-color;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 2rem 9%;
+   box-shadow: $ui-shadow;
+   position: fixed;
+   top: 0; left: 0; right: 0;
+   z-index: $ui-index-3;
+
+   &__logo{
+    font-size: 2.5rem;
+    color: $ui-black-color;
+    font-weight: bolder;
+
+    i{
+        color: $ui-carrot-color;
+    }
+   }
+
+   &__navbar{
+
+        a{
+            margin: 0 1rem;
+            font-size: 1.7rem;
+            color: $ui-light-color;
+
+            &:hover{
+                @media #{$ui-mouse-device} {
+                    color: $ui-carrot-color;
+                }
+            }
+        }
+    }
+
+   &__icons{
+
+        a, div{
+            font-size: 2.5rem;
+            margin-left: 1.5rem;
+            color: $ui-black-color;
+            cursor: pointer;
+
+            &:hover{
+                @media #{$ui-mouse-device}{
+                    color: $ui-carrot-color;
+                }
+            }
+        }
+    }
+   
+    .login-form{
+        position: absolute;
+        top: 120%; right: 2rem;
+        width: 35rem;
+        border-radius: $ui-border-radius;
+        background: $ui-white-color;
+        box-shadow: $ui-shadow;
+        padding: 2rem;
+        display: none;
+
+        &.active{
+            display: block;
+            animation: fadeIn .4s linear;
+        }
+
+        h3{
+            color: $ui-black-color;
+            font-size: 2.5rem;
+            padding-bottom: .5rem;
+        }
+
+        .form__item{
+            width: 100%;
+            border: none;
+            border-bottom: $ui-border;
+            border-width: .1rem;
+            padding: 1.5rem 0;
+            font-size:  1.6rem;
+            color: $ui-black-color;
+            text-transform: none;
+            margin: 1rem 0;
+        }
+
+        .form__remember{
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem 0;
+
+            label{
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: $ui-light-color;
+            }
+        }
+
+        .ui-btn{
+            @include form-btn();
+            margin: 1.5rem 0;
+        }
+        
+        .links{
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            margin-top: 1re,;
+
+            a{
+                font-size: 1.4rem;
+                color: $ui-carrot-color;
+
+                &:hover{
+                    @media #{$ui-mouse-device}{
+                        color: $ui-black-color;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#menu-btn{
+    display: none;
 }

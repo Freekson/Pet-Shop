@@ -1,6 +1,38 @@
-// your code
+// import font
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
+
 @import './ui-kit';
 
 @import './_header';
-@import './_footer'
+@import './_footer';
 
+
+*{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+    &::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: $ui-carrot-color;
+        border-radius: $ui-border-radius-b;
+    }
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border: none;
+}

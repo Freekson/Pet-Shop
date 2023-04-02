@@ -1,0 +1,96 @@
+$ui-carrot-color: #e67e22;
+$ui-black-color: #130f40;
+$ui-white-color: #fff;
+$ui-light-color: #666;
+$ui-bg-light: #eee;
+
+$ui-border: .2rem solid $ui-black-color;
+$ui-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+$ui-border-radius-b: 5rem; 
+$ui-border-radius: 1rem;
+
+$ui-mouse-device: '(any-hover: hover) and (any-pointer: fine)';
+$ui-touch-device: '(any-hover: none) and (any-pointer: coarse)';
+
+$ui-index-0: 0;
+$ui-index-1: 1;
+$ui-index-2: 2;
+$ui-index-3: 3;
+
+@mixin grid($val){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+}
+
+@mixin form-btn{
+    width: 100%;
+    text-align: center;
+
+    &:hover{
+        @media #{$ui-mouse-device}{
+            background: $ui-black-color;
+        }
+    }
+}
+
+
+@keyframes fadeIn {
+    0%{
+        transform:  translateY(4rem);
+        opacity: 0;
+    }
+}
+
+// @keyframes fadeOut {
+//     0% {
+//         transform: translateY(0);
+//         opacity: 1;
+//     }
+//     100% {
+//         transform: translateY(4rem);
+//         opacity: 0;
+//     }
+// }
+
+.ui-btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 2.8rem;
+    border: $ui-border;
+    border-radius: $ui-border-radius-b;
+    border-top-left-radius: 0;
+    cursor: pointer;
+    background: none;
+    color: $ui-black-color;
+    font-size: 1.7rem;
+    overflow: hidden;
+    z-index: $ui-index-0;
+    position: relative;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%;
+        width: 100%;
+        background: $ui-black-color;
+        z-index: -1;
+        transition: .2s linear;
+        clip-path: circle(0% at 0% 5%);
+    }
+
+    &:hover::before{
+
+        @media #{$ui-mouse-device}{
+            clip-path: circle(100%);
+        }
+    }
+    &:hover{
+
+        @media #{$ui-mouse-device}{
+            color: $ui-bg-light;
+        }
+    }
+   
+}

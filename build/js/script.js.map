@@ -1,1 +1,1 @@
-{"version":3,"sources":["script.js"],"names":[],"mappings":"AACA","file":"script.js","sourcesContent":[null]}
+{"version":3,"sources":["script.js","main.js"],"names":["loginForm","document","querySelector","onclick","classList","toggle"],"mappings":"AAAA,aCAA,IAAIA,EAAYC,SAASC,cAAc,uBACvCD,SAASC,cAAc,cAAcC,QAAU,WAC3CH,EAAUI,UAAUC,OAAO","file":"script.js","sourcesContent":[null,"let loginForm = document.querySelector('.header .login-form');\r\ndocument.querySelector('#login-btn').onclick = () => {\r\n    loginForm.classList.toggle('active');\r\n}"]}

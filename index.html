@@ -7,14 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="build/css/style.css">
-    <title>Document</title>
+
+    <title>Pet food website</title>
 </head>
 
 <body>
 
-    <!-- Your code -->
+    <header class="header">
+        <a href="#" class="header__logo"> <i class="fas fa-paw"></i> shop </a>
+        <nav class="nav header__navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#shop">shop</a>
+            <a href="#services">services</a>
+            <a href="#plan">plan</a>
+            <a href="#contact">contact</a>
+        </nav>
+        <div class="header__icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+        <form action="" class="login-form">
+            <h3>sign in</h3>
+            <input type="email" name="email" placeholder="input your email" id="email" class="form__item">
+            <input type="password" name="password" placeholder="input your password" id="password" class="form__item">
+            <div class="form__remember">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">remember me</label>
+            </div>
+            <input type="submit" value="sing in" class="ui-btn">
+            <div class="links">
+                <a href="#">forget password</a>
+                <a href="#">sing up</a>
+            </div>
+        </form>
+    </header>
 
     <script src="build/js/script.js"></script>
 </body>
