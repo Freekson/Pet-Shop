@@ -8,6 +8,11 @@
    position: fixed;
    top: 0; left: 0; right: 0;
    z-index: $ui-index-3;
+   transform: translateY(-10rem);
+
+   &.active{
+    transform: translateY(0rem);
+   }
 
    &__logo{
     font-size: 2.5rem;
@@ -124,4 +129,57 @@
 
 #menu-btn{
     display: none;
+}
+
+
+@media #{$ui-port-tabl}{
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+}
+
+@media #{$ui-phone}{
+    #menu-btn{
+        display: inline-block;
+    }
+    
+    .header{
+        &__navbar{
+            position: absolute;
+            top: 99%; left: 0; right: 0;
+            background: $ui-white-color;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            &.active{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            a{
+                display: block;
+                margin: 2rem;
+                font-size: 2rem;
+
+            }
+        }
+    }
+}
+
+@media #{$ui-sm-phone}{
+    html{
+        font-size: 50%;
+    }
+    .header{
+        .login-form{
+            width: 90%;
+            box-sizing: border-box;
+            
+            h3{
+                margin: 1rem 0;
+            }
+        }
+    }
 }
