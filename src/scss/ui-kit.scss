@@ -9,19 +9,19 @@ $ui-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
 $ui-border-radius-b: 5rem; 
 $ui-border-radius: 1rem;
 
-$ui-mouse-device: '(any-hover: hover) and (any-pointer: fine)';
-$ui-touch-device: '(any-hover: none) and (any-pointer: coarse)';
-
 $ui-index-0: 0;
 $ui-index-1: 1;
 $ui-index-2: 2;
 $ui-index-3: 3;
 
-$ui-desk-lap: '(min-width: 1200px)';
-$ui-tabl: '(min-width: 992px) and (max-width: 1199px)';
-$ui-port-tabl: '(min-width: 768px) and (max-width: 991px)';
-$ui-phone: '(max-width: 767px)';
-$ui-sm-phone: '(max-width: 480px)';
+$ui-mouse-device: '(any-hover: hover) and (any-pointer: fine)';
+$ui-touch-device: '(any-hover: none) and (any-pointer: coarse)';
+
+$ui-m-desk-lap: '(min-width: 1200px)';
+$ui-m-tabl: '(min-width: 992px) and (max-width: 1199px)';
+$ui-m-port-tabl: '(min-width: 768px) and (max-width: 991px)';
+$ui-m-phone: '(max-width: 767px)';
+$ui-m-sm-phone: '(max-width: 480px)';
 
 @mixin grid($val){
     display: grid;
@@ -38,6 +38,21 @@ $ui-sm-phone: '(max-width: 480px)';
             background: $ui-black-color;
         }
     }
+}
+
+@mixin white-btn{
+    color: $ui-white-color;
+    border-color: $ui-white-color;
+
+    &:hover{
+        @media #{$ui-mouse-device}{
+            color: $ui-black-color;
+        }
+    }
+    &:before{
+        background: $ui-white-color;
+    }
+    
 }
 
 
@@ -71,7 +86,7 @@ $ui-sm-phone: '(max-width: 480px)';
     color: $ui-black-color;
     font-size: 1.7rem;
     overflow: hidden;
-    z-index: $ui-index-0;
+    z-index: $ui-index-1;
     position: relative;
 
     &::before{

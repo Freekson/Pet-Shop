@@ -131,8 +131,7 @@
     display: none;
 }
 
-
-@media #{$ui-port-tabl}{
+@media #{$ui-m-port-tabl}{
     html{
         font-size: 55%;
     }
@@ -142,7 +141,7 @@
     }
 }
 
-@media #{$ui-phone}{
+@media #{$ui-m-phone}{
     #menu-btn{
         display: inline-block;
     }
@@ -168,7 +167,7 @@
     }
 }
 
-@media #{$ui-sm-phone}{
+@media #{$ui-m-sm-phone}{
     html{
         font-size: 50%;
     }
