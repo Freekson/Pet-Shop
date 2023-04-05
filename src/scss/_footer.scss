@@ -38,6 +38,7 @@
             color: $ui-carrot-color;
 
             &:hover{
+                
                 @media #{$ui-mouse-device}{
                     text-decoration: underline;
                 }
