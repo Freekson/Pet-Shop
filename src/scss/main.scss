@@ -77,7 +77,7 @@ input:focus, textarea:focus, select:focus {
 
     .wave{
         position: absolute;
-        bottom: 0; left: 0;
+        bottom: -1px; left: 0;
         width: 100%;
 
         path{
@@ -111,6 +111,127 @@ input:focus, textarea:focus, select:focus {
             color: $ui-light-color;
             padding: 1rem 0;
             line-height: 2;
+
+        }
+    }
+}
+
+.cat-food{
+    flex-wrap: wrap-reverse;
+}
+
+.shop{
+    &__wrapper{
+        @include grid(35rem);
+    }
+    &__item{
+        position: relative;
+        overflow: hidden;
+
+        &:hover{
+            @media #{$ui-mouse-device}{
+                .image img{
+                    transform: scale(1.1);
+                }
+            }
+
+            .icons{
+                transform: translateX(0rem);
+            }
+        }
+
+        .image{
+            height: 45rem;
+            width: 100%;
+            overflow: hidden;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .icons{
+            position: absolute;
+            top: 1rem; right: 2rem;
+            z-index: $ui-index-2;
+            transform: translateX(10rem);
+
+            a{
+                display: block;
+                width: 5rem;
+                height: 5rem;
+                line-height: 5rem;
+                font-size: 2.2rem;
+                margin-top: 1rem;
+                background: $ui-white-color;
+                color: $ui-black-color;
+                text-align: center;
+                border-radius: $ui-border-radius;
+
+                &:hover{
+                    @media #{$ui-mouse-device}{
+                        color: $ui-white-color;
+                        background: $ui-carrot-color;
+                    }
+                }
+            }
+        }
+        .content{
+            padding: 1rem 0;
+            text-align: center;
+
+            h3{
+                font-size: 2.2rem;
+                color: $ui-black-color;
+                padding-bottom: .5rem;
+            }
+
+            .amount{
+                font-size: 2rem;
+                color: $ui-carrot-color;
+            }
+        }
+    }
+}
+
+.services{
+    &__wrapper{
+        @include grid(35rem);
+    }
+
+    &__item{
+        background: $ui-bg-light;
+        padding: 3rem;
+        text-align: center;
+        border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+
+        &:nth-child(even){
+            border-radius: 79% 21% 81% 19% / 58% 92% 7% 42%;
+        }
+
+        &:hover{
+            @media #{$ui-mouse-device}{
+                border-radius: $ui-border-radius;
+            }
+        }
+
+        i{
+            height: 6.5rem;
+            width: 6.5rem;
+            line-height: 6.5rem;
+            font-size: 3rem;
+            color: $ui-white-color;
+            background: $ui-carrot-color;
+            border-radius: 50%;
+            margin-bottom: .5rem;
+        }
+
+        h3{
+            font-size: 2.2rem;
+            color: $ui-black-color;
+            padding: 1rem 0;
 
         }
     }
