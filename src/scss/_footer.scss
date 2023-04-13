@@ -1,47 +1,47 @@
-.footer{
-    position: relative;
-    background: url(../img/footer_background.jpg) no-repeat;
-    background-position: center;
-    background-size: center;
-    padding-bottom: 2rem;
+.footer {
+  position: relative;
+  background: url(../img/footer_background.jpg) no-repeat;
+  background-position: center;
+  background-size: center;
+  padding-bottom: 2rem;
 
-    svg{
-        top: 0; left: 0;
-        width: 100%;
+  svg {
+    margin-top: -1px;
+    width: 100%;
 
-        path{
-            fill: $ui-white-color;
-        }
+    path {
+      fill: $ui-white-color;
     }
-    .share{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1.5rem;
+  }
+  .share {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 
-        a{
-            @include white-btn();
-            
-            i{
-                padding-right: .5rem;
-            }
-        }
+    a {
+      @include white-btn();
+
+      i {
+        padding-right: 0.5rem;
+      }
     }
-    .credit{
-        text-align: center;
-        color: $ui-white-color;
-        font-size: 2rem;
-        padding: 2rem 1rem;
-        margin-top: 2.5rem;
+  }
+  .credit {
+    text-align: center;
+    color: $ui-white-color;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 2.5rem;
 
-        a{
-            color: $ui-carrot-color;
+    a {
+      color: $ui-carrot-color;
 
-            &:hover{
-                @media #{$ui-mouse-device}{
-                    text-decoration: underline;
-                }
-            }
+      &:hover {
+        @media #{$ui-mouse-device} {
+          text-decoration: underline;
         }
+      }
     }
+  }
 }

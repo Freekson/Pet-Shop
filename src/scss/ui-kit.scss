@@ -4,9 +4,9 @@ $ui-white-color: #fff;
 $ui-light-color: #666;
 $ui-bg-light: #eee;
 
-$ui-border: .2rem solid $ui-black-color;
-$ui-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
-$ui-border-radius-b: 5rem; 
+$ui-border: 0.2rem solid $ui-black-color;
+$ui-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+$ui-border-radius-b: 5rem;
 $ui-border-radius: 1rem;
 
 $ui-index-0: 0;
@@ -14,161 +14,157 @@ $ui-index-1: 1;
 $ui-index-2: 2;
 $ui-index-3: 3;
 
-$ui-mouse-device: '(any-hover: hover) and (any-pointer: fine)';
-$ui-touch-device: '(any-hover: none) and (any-pointer: coarse)';
+$ui-mouse-device: "(any-hover: hover) and (any-pointer: fine)";
+$ui-touch-device: "(any-hover: none) and (any-pointer: coarse)";
 
-$ui-m-desk-lap: '(min-width: 1200px)';
-$ui-m-tabl: '(min-width: 992px) and (max-width: 1199px)';
-$ui-m-port-tabl: '(min-width: 768px) and (max-width: 991px)';
-$ui-m-phone: '(max-width: 767px)';
-$ui-m-sm-phone: '(max-width: 480px)';
+$ui-m-desk-lap: "(min-width: 1200px)";
+$ui-m-tabl: "(min-width: 992px) and (max-width: 1199px)";
+$ui-m-port-tabl: "(min-width: 768px) and (max-width: 991px)";
+$ui-m-phone: "(max-width: 767px)";
+$ui-m-sm-phone: "(max-width: 480px)";
+$ui-m-usm-phone: "(max-width: 290px)";
 
-@mixin grid($val){
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
-    gap: 1.5rem;
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
 }
 
-@mixin form-btn{
-    width: 100%;
-    text-align: center;
+@mixin form-btn {
+  width: 100%;
+  text-align: center;
 
-    &:hover{
-        @media #{$ui-mouse-device}{
-            background: $ui-black-color;
-        }
+  &:hover {
+    @media #{$ui-mouse-device} {
+      background: $ui-black-color;
     }
+  }
 }
 
-@mixin white-btn{
-    color: $ui-white-color;
-    border-color: $ui-white-color;
+@mixin white-btn {
+  color: $ui-white-color;
+  border-color: $ui-white-color;
 
-    &:hover{
-        @media #{$ui-mouse-device}{
-            color: $ui-black-color;
-        }
+  &:hover {
+    @media #{$ui-mouse-device} {
+      color: $ui-black-color;
     }
-    &:before{
-        background: $ui-white-color;
-    }
-    
+  }
+  &:before {
+    background: $ui-white-color;
+  }
 }
-
 
 @keyframes fadeIn {
-    0%{
-        transform:  translateY(3rem);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
 }
 
+.ui-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2.8rem;
+  border: $ui-border;
+  border-radius: $ui-border-radius-b;
+  border-top-left-radius: 0;
+  cursor: pointer;
+  background: none;
+  color: $ui-black-color;
+  font-size: 1.7rem;
+  overflow: hidden;
+  z-index: $ui-index-1;
+  position: relative;
 
-.ui-btn{
-    display: inline-block;
-    margin-top: 1rem;
-    padding: .8rem 2.8rem;
-    border: $ui-border;
-    border-radius: $ui-border-radius-b;
-    border-top-left-radius: 0;
-    cursor: pointer;
-    background: none;
-    color: $ui-black-color;
-    font-size: 1.7rem;
-    overflow: hidden;
-    z-index: $ui-index-1;
-    position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $ui-black-color;
+    z-index: -1;
+    transition: 0.2s linear;
+    clip-path: circle(0% at 0% 5%);
+  }
 
-    &::before{
-        content: '';
-        position: absolute;
-        top: 0; left: 0;
-        height: 100%;
-        width: 100%;
-        background: $ui-black-color;
-        z-index: -1;
-        transition: .2s linear;
-        clip-path: circle(0% at 0% 5%);
+  &:hover::before {
+    @media #{$ui-mouse-device} {
+      clip-path: circle(100%);
     }
-
-    &:hover::before{
-
-        @media #{$ui-mouse-device}{
-            clip-path: circle(100%);
-        }
+  }
+  &:hover {
+    @media #{$ui-mouse-device} {
+      color: $ui-bg-light;
     }
-    &:hover{
-
-        @media #{$ui-mouse-device}{
-            color: $ui-bg-light;
-        }
-    }
-   
+  }
 }
 
-.ui-banner{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem 0;
+.ui-banner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
 
-    .image{
-        flex: 1 1 40rem;
+  .image {
+    flex: 1 1 40rem;
 
-        img{
-            width: 100%;
-        }
+    img {
+      width: 100%;
     }
+  }
 
-    .content{
-        flex: 1 1 40rem;
-        text-align: center;
-        padding: 2rem;
-        
-        h3{
-            font-size: 3.5rem;
-            color: $ui-black-color;
-
-            span{
-                color: $ui-carrot-color;
-            }
-        }
-
-        p{
-            padding: 1rem 0;
-            line-height: 2;
-            color: $ui-light-color;
-            font-size: 1.6rem;
-        }
-
-        .amount{
-            font-size: 3.5rem;
-            color: $ui-black-color;
-            padding: .5rem 0;
-        }
-
-        a{
-            img{
-                height: 15rem;
-                margin-top: 1rem;
-            }
-
-            &:hover img{
-                @media #{$ui-mouse-device}{
-                    transform: rotate(15deg);
-                }
-            }
-        }
-    }
-}
-
-.ui-heading{
-    padding-bottom: 2rem;
+  .content {
+    flex: 1 1 40rem;
     text-align: center;
-    font-size: 3.5rem;
-    color: $ui-black-color;
+    padding: 2rem;
 
-    span{
+    h3 {
+      font-size: 3.5rem;
+      color: $ui-black-color;
+
+      span {
         color: $ui-carrot-color;
+      }
     }
+
+    p {
+      padding: 1rem 0;
+      line-height: 2;
+      color: $ui-light-color;
+      font-size: 1.6rem;
+    }
+
+    .amount {
+      font-size: 3.5rem;
+      color: $ui-black-color;
+      padding: 0.5rem 0;
+    }
+
+    a {
+      img {
+        height: 15rem;
+        margin-top: 1rem;
+      }
+
+      &:hover img {
+        @media #{$ui-mouse-device} {
+          transform: rotate(15deg);
+        }
+      }
+    }
+  }
+}
+
+.ui-heading {
+  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 3.5rem;
+  color: $ui-black-color;
+
+  span {
+    color: $ui-carrot-color;
+  }
 }
